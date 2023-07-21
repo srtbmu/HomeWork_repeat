@@ -32,4 +32,9 @@
         android:name="com.example.homework_repeat.ui.profile.ProfileFragment"
         android:label="profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/onBoardingFragment"
+        android:name="com.example.homework_repeat.ui.onboarding.OnBoardingFragment"
+        android:label="fragment_on_boarding"
+        tools:layout="@layout/fragment_on_boarding" />
 </navigation>
