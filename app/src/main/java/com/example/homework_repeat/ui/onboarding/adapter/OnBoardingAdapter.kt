@@ -58,7 +58,6 @@ class OnBoardingAdapter(private val onClick: () -> Unit) :
                 .into(ivBoard)
             btnStart.isVisible = adapterPosition == data.lastIndex
             skip.isVisible = adapterPosition != data.lastIndex
-
             btnStart.setOnClickListener {
                 onClick()
             }

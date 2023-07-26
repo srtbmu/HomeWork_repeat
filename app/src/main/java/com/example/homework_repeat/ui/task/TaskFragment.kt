@@ -14,9 +14,7 @@ import com.example.homework_repeat.databinding.FragmentTaskBinding
 import com.example.homework_repeat.model.Task
 
 class TaskFragment : Fragment() {
-
     private lateinit var binding: FragmentTaskBinding
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,14 +30,13 @@ class TaskFragment : Fragment() {
                 title = binding.etTitle.text.toString(),
                 desc = binding.etDescription.text.toString()
             )
-//            data.copy(title = "title")
-        setFragmentResult(RESULT_REQUEST_KEY, bundleOf(RESULT_KEY to data))
-        findNavController().navigateUp()
+            setFragmentResult(RESULT_REQUEST_KEY, bundleOf(RESULT_KEY to data))
+            findNavController().navigateUp()
         }
     }
 
     companion object {
-    const val RESULT_REQUEST_KEY = "request.key"
-    const val RESULT_KEY = "result.key"
+        const val RESULT_REQUEST_KEY = "request.key"
+        const val RESULT_KEY = "result.key"
     }
 }

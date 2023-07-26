@@ -19,7 +19,6 @@ import com.example.homework_repeat.ui.task.adapter.TaskAdapter
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-
     private val adapter = TaskAdapter()
     private val binding get() = _binding!!
 
@@ -38,7 +37,6 @@ class HomeFragment : Fragment() {
         setFragmentResultListener(RESULT_REQUEST_KEY) { _, bundle ->
             val data = bundle.getSerializable(RESULT_KEY) as Task
             adapter.addTask(data)
-//            Log.e("ololo", "onViewCreated: " + data)
         }
         binding.btnFab.setOnClickListener {
             findNavController().navigate(R.id.taskFragment)

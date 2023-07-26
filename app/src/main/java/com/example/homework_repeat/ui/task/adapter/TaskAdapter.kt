@@ -8,13 +8,6 @@ import com.example.homework_repeat.databinding.ItemTaskBinding
 import com.example.homework_repeat.model.Task
 
 class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
-    inner class TaskViewHolder(private val binding: ItemTaskBinding) : ViewHolder(binding.root) {
-        fun bind(task: Task) = with(binding) {
-            tvTitle.text = task.title
-            tvDesc.text = task.desc
-        }
-    }
-
     private val list = arrayListOf<Task>()
 
     fun addTask(task: Task) {
@@ -38,5 +31,12 @@ class TaskAdapter : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     override fun getItemCount(): Int {
         return list.size
+    }
+
+    inner class TaskViewHolder(private val binding: ItemTaskBinding) : ViewHolder(binding.root) {
+        fun bind(task: Task) = with(binding) {
+            tvTitle.text = task.title
+            tvDesc.text = task.desc
+        }
     }
 }

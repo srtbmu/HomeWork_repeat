@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.homework_repeat.R
+import com.example.homework_repeat.data.local.Pref
 import com.example.homework_repeat.databinding.FragmentOnBoardingBinding
 import com.example.homework_repeat.ui.onboarding.adapter.OnBoardingAdapter
 import me.relex.circleindicator.CircleIndicator3
@@ -15,6 +16,9 @@ class OnBoardingFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardingBinding
     private val adapter = OnBoardingAdapter(this::onClick)
+    private val pref: Pref by lazy {
+        Pref(requireContext())
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +36,7 @@ class OnBoardingFragment : Fragment() {
     }
 
     private fun onClick() {
-        findNavController().navigate(R.id.navigation_home)
+        pref.onBoardingShowed()
+        findNavController().navigateUp()
     }
 }

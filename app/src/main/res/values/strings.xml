@@ -10,4 +10,5 @@
     <string name="descriptio">Description:</string>
     <string name="save">Save</string>
     <string name="profile">Profile</string>
+    <string name="saveButton">SAVE</string>
 </resources>
