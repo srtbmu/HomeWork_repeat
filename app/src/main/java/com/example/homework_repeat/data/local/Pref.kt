@@ -25,17 +25,18 @@ class Pref(private val context: Context) {
     }
 
     fun saveImage(image: String) { //принимает картику
-        pref.edit().putString("keyImg", image).apply()
+        pref.edit().putString(IMAGE_URL_KEY, image).apply()
     }
 
     fun getImage(): String { // возвроощает картику
-        return pref.getString("keyImg", "").toString()
+        return pref.getString(IMAGE_URL_KEY, "").toString()
     }
 
     companion object {
         const val PREF_NAME = "pref.name"
         const val SHOWED_KEY = "seen.key"
         const val NAME_KEY = "name.key"
+        const val IMAGE_URL_KEY = "image.uri.key"
     }
 }
 
