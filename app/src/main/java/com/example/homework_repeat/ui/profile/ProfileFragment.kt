@@ -10,7 +10,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.net.toUri
 import androidx.core.widget.addTextChangedListener
 import com.example.homework_repeat.data.local.Pref
 import com.example.homework_repeat.databinding.FragmentProfileBinding
@@ -22,6 +21,7 @@ class ProfileFragment : Fragment() {
     private val pref: Pref by lazy {
         Pref(requireContext())
     }
+
     private val launcher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             if (result.resultCode == Activity.RESULT_OK && result.data != null) {
@@ -63,7 +63,3 @@ class ProfileFragment : Fragment() {
         }
     }
 }
-
-
-
-

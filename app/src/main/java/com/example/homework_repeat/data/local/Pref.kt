@@ -2,7 +2,6 @@ package com.example.homework_repeat.data.local
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
-import android.net.Uri
 
 class Pref(private val context: Context) {
 

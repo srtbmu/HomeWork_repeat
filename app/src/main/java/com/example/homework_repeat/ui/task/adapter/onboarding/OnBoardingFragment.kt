@@ -1,4 +1,4 @@
-package com.example.homework_repeat.ui.onboarding
+package com.example.homework_repeat.ui.task.adapter.onboarding
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.homework_repeat.R
 import com.example.homework_repeat.data.local.Pref
 import com.example.homework_repeat.databinding.FragmentOnBoardingBinding
-import com.example.homework_repeat.ui.onboarding.adapter.OnBoardingAdapter
+import com.example.homework_repeat.ui.task.adapter.onboarding.adapter.OnBoardingAdapter
 import me.relex.circleindicator.CircleIndicator3
 
 class OnBoardingFragment : Fragment() {
