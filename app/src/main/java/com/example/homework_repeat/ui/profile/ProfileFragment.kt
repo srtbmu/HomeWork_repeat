@@ -14,6 +14,7 @@ import androidx.core.net.toUri
 import androidx.core.widget.addTextChangedListener
 import com.example.homework_repeat.data.local.Pref
 import com.example.homework_repeat.databinding.FragmentProfileBinding
+import com.example.homework_repeat.utils.loadImage
 
 class ProfileFragment : Fragment() {
 
@@ -21,6 +22,14 @@ class ProfileFragment : Fragment() {
     private val pref: Pref by lazy {
         Pref(requireContext())
     }
+    private val launcher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
+            if (result.resultCode == Activity.RESULT_OK && result.data != null) {
+                val image = result.data?.data
+                pref.saveImage(image.toString())
+                binding.imageView.loadImage(image.toString())
+            }
+        }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,24 +41,17 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        Log.e("GET_IMAGE", pref.getImage())
         insertName()
         openGallery()
     }
 
-    private val launcher =
-        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-            if (result.resultCode == Activity.RESULT_OK && result.data != null) {
-                val image = result.data?.data.toString()
-                pref.saveImage(image)
-                binding.imageView.setImageURI(pref.getImage().toUri())
-                Log.e("IMAGEVIEW_PREFERENCE", image)
-            }
-        }
-
     private fun openGallery() {
+        binding.imageView.loadImage(pref.getImage())
         binding.imageView.setOnClickListener {
-            val intent = Intent(Intent.ACTION_GET_CONTENT)
+            val intent = Intent()
             intent.type = "image/*"
+            intent.action = Intent.ACTION_GET_CONTENT
             launcher.launch(intent)
         }
     }
@@ -61,4 +63,7 @@ class ProfileFragment : Fragment() {
         }
     }
 }
+
+
+
 
