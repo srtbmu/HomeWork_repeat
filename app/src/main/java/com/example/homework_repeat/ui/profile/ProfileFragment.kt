@@ -22,7 +22,7 @@ class ProfileFragment : Fragment() {
         Pref(requireContext())
     }
 
-    private val launcher =
+    private val imageLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
             if (result.resultCode == Activity.RESULT_OK && result.data != null) {
                 val image = result.data?.data
@@ -52,7 +52,7 @@ class ProfileFragment : Fragment() {
             val intent = Intent()
             intent.type = "image/*"
             intent.action = Intent.ACTION_GET_CONTENT
-            launcher.launch(intent)
+            imageLauncher.launch(intent)
         }
     }
 

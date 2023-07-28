@@ -1,25 +1,25 @@
 package com.example.homework_repeat.ui.home
 
+import android.app.AlertDialog
+import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.setFragmentResult
-import androidx.fragment.app.setFragmentResultListener
 import androidx.navigation.fragment.findNavController
+import com.example.homework_repeat.App
 import com.example.homework_repeat.R
 import com.example.homework_repeat.databinding.FragmentHomeBinding
 import com.example.homework_repeat.model.Task
-import com.example.homework_repeat.ui.task.TaskFragment.Companion.RESULT_KEY
-import com.example.homework_repeat.ui.task.TaskFragment.Companion.RESULT_REQUEST_KEY
 import com.example.homework_repeat.ui.task.adapter.TaskAdapter
 
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    private val adapter = TaskAdapter()
+    private var adapter = TaskAdapter(this::onLongClick)
+
+
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -34,17 +34,29 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerView.adapter = adapter
-        setFragmentResultListener(RESULT_REQUEST_KEY) { _, bundle ->
-            val data = bundle.getSerializable(RESULT_KEY) as Task
-            adapter.addTask(data)
-        }
+        val data = App.db.taskDao().getAll()
+        adapter.addTasks(data)
         binding.btnFab.setOnClickListener {
             findNavController().navigate(R.id.taskFragment)
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
+    private fun onLongClick(task: Task) {
+        AlertDialog.Builder(requireContext())
+            .setTitle("Delete?")
+            .setPositiveButton("Yes") { _, _ ->
+                App.db.taskDao().delete(task)
+                setData()
+            }
+            .setNegativeButton(
+                "No"
+            ) { dialog, _ -> dialog?.dismiss() }
+            .create()
+            .show()
+    }
+
+    private fun setData() {
+        val list = App.db.taskDao().getAll()
+        adapter.addTasks(list)
     }
 }
