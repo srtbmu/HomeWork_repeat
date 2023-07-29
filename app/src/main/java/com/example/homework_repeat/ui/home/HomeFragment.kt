@@ -1,7 +1,6 @@
 package com.example.homework_repeat.ui.home
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -18,8 +17,6 @@ class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
     private var adapter = TaskAdapter(this::onLongClick)
-
-
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -34,8 +31,7 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.recyclerView.adapter = adapter
-        val data = App.db.taskDao().getAll()
-        adapter.addTasks(data)
+        setData()
         binding.btnFab.setOnClickListener {
             findNavController().navigate(R.id.taskFragment)
         }

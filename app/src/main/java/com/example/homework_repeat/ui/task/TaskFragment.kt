@@ -33,9 +33,4 @@ class TaskFragment : Fragment() {
             findNavController().navigateUp()
         }
     }
-
-    companion object {
-        const val RESULT_REQUEST_KEY = "request.key"
-        const val RESULT_KEY = "result.key"
-    }
 }

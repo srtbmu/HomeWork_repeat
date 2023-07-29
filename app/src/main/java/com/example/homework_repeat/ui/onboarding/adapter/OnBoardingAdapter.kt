@@ -1,4 +1,4 @@
-package com.example.homework_repeat.ui.task.adapter.onboarding.adapter
+package com.example.homework_repeat.ui.onboarding.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

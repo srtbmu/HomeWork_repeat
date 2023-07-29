@@ -3,7 +3,7 @@ package com.example.homework_repeat.data.local
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 
-class Pref(private val context: Context) {
+class Pref(context: Context) {
 
     private val pref = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE)
 
@@ -23,11 +23,11 @@ class Pref(private val context: Context) {
         return pref.getString(NAME_KEY, null)
     }
 
-    fun saveImage(image: String) { //принимает картику
+    fun saveImage(image: String) {
         pref.edit().putString(IMAGE_URL_KEY, image).apply()
     }
 
-    fun getImage(): String { // возвроощает картику
+    fun getImage(): String {
         return pref.getString(IMAGE_URL_KEY, "").toString()
     }
 

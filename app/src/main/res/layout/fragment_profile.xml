@@ -28,7 +28,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="212dp"
-        android:backgroundTint="@color/black"
+        android:background="@drawable/edit_text_bardure"
         android:hint="@string/description"
         android:textColorHint="@color/black"
         app:layout_constraintTop_toTopOf="parent" />
