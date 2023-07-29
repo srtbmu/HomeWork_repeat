@@ -11,4 +11,7 @@
     <string name="save">Save</string>
     <string name="profile">Profile</string>
     <string name="saveButton">SAVE</string>
+    <string name="input">Name</string>
+    <string name="prfile_hint">Name</string>
+    <string name="todo">TODO</string>
 </resources>
