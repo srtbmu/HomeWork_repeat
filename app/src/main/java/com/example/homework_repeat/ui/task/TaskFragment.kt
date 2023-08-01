@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.homework_repeat.App
@@ -25,12 +26,18 @@ class TaskFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnSave.setOnClickListener {
-            val data = Task(
-                title = binding.etTitle.text.toString(),
-                desc = binding.etDescription.text.toString()
-            )
-            App.db.taskDao().insert(data)
-            findNavController().navigateUp()
+            if (binding.etTitle.text.toString().isNotEmpty()) {
+                val data = Task(
+                    title = binding.etTitle.text.toString(),
+                    desc = binding.etDescription.text.toString()
+                )
+                App.db.taskDao().insert(data)
+                findNavController().navigateUp()
+            } else {
+                Toast.makeText(context, "null title", Toast.LENGTH_SHORT).show()
+                binding.etTitle.error = "Title Required"
+                return@setOnClickListener
+            }
         }
     }
 }

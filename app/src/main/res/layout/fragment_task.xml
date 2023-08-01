@@ -1,60 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".ui.task.TaskFragment">
 
-    <RelativeLayout
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="60dp"-->
+    <!--        android:layout_marginLeft="28dp"-->
+    <!--        android:layout_marginRight="28dp">-->
+
+    <!--        <EditText-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="45dp"-->
+    <!--            android:layout_marginTop="15dp"-->
+    <!--            android:background="@drawable/boarder"-->
+    <!--            android:paddingLeft="5dp" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/et_title"-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginTop="4dp"-->
+    <!--            android:background="#ffffff"-->
+    <!--            android:text="header"-->
+    <!--            android:textColor="#03A6F0"-->
+    <!--            android:textSize="18sp" />-->
+    <!--    </RelativeLayout>-->
+
+    <!--    <RelativeLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="60dp"-->
+    <!--        android:layout_marginLeft="28dp"-->
+    <!--        android:layout_marginRight="28dp">-->
+
+    <!--        <EditText-->
+    <!--            android:id="@+id/et_description"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="45dp"-->
+    <!--            android:layout_marginTop="15dp"-->
+    <!--            android:background="@drawable/boarder"-->
+    <!--            android:paddingLeft="5dp" />-->
+
+    <!--        <TextView-->
+    <!--            android:layout_width="wrap_content"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginLeft="10dp"-->
+    <!--            android:layout_marginTop="4dp"-->
+    <!--            android:background="#ffffff"-->
+    <!--            android:text="text"-->
+    <!--            android:textColor="#03A6F0"-->
+    <!--            android:textSize="18sp" />-->
+    <!--    </RelativeLayout>-->
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_title"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginRight="28dp">
+        android:layout_height="54dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:textColorHint="@color/black"
+        app:helperText="@string/title"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/boarder"
-            android:paddingLeft="5dp" />
-
-        <TextView
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_title"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="4dp"
-            android:background="#ffffff"
-            android:text="header"
-            android:textColor="#03A6F0"
-            android:textSize="18sp" />
-    </RelativeLayout>
+            android:hint="@string/title" />
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <RelativeLayout
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_desc"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginRight="28dp">
+        android:layout_height="54dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="16dp"
+        android:textColorHint="@color/black"
+        app:helperText="@string/description"
+        app:layout_constraintTop_toTopOf="@id/input_title">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_description"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/boarder"
-            android:paddingLeft="5dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="4dp"
-            android:background="#ffffff"
-            android:text="text"
-            android:textColor="#03A6F0"
-            android:textSize="18sp" />
-    </RelativeLayout>
+            android:hint="@string/description" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btn_save"

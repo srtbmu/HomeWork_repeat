@@ -5,13 +5,13 @@
     <string name="title_notifications">Notifications</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="description">Description</string>
+    <string name="description">Description:</string>
     <string name="title">Title:</string>
     <string name="descriptio">Description:</string>
     <string name="save">Save</string>
     <string name="profile">Profile</string>
     <string name="saveButton">SAVE</string>
     <string name="input">Name</string>
-    <string name="prfile_hint">Name</string>
+    <string name="profile_hint">Name</string>
     <string name="todo">TODO</string>
 </resources>
