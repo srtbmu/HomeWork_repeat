@@ -6,7 +6,7 @@ import com.example.homework_repeat.model.Task
 @Dao
 interface TaskDao {
 
-    @Query("SELECT * FROM task  ORDER BY id DESC")
+    @Query("SELECT * FROM task ORDER BY id DESC")
     fun getAll(): List<Task>
 
     @Insert
@@ -17,4 +17,5 @@ interface TaskDao {
 
     @Update
     fun update(task: Task)
+
 }

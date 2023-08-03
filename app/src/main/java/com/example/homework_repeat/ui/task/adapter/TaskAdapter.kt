@@ -1,20 +1,21 @@
 package com.example.homework_repeat.ui.task.adapter
 
+import android.annotation.SuppressLint
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
-import com.example.homework_repeat.R
 import com.example.homework_repeat.databinding.ItemTaskBinding
 import com.example.homework_repeat.model.Task
 
 class TaskAdapter(
-    private val onLongClick: (Task) -> Unit
+    private val onLongClick: (Task) -> Unit,
+    private val onClick: (Task) -> Unit
 ) : RecyclerView.Adapter<TaskAdapter.TaskViewHolder>() {
 
     private val list = arrayListOf<Task>()
 
+    @SuppressLint("NotifyDataSetChanged")
     fun addTasks(tasks: List<Task>) {
         list.clear()
         list.addAll(tasks)
@@ -40,22 +41,23 @@ class TaskAdapter(
         return list.size
     }
 
-    inner class TaskViewHolder(private val binding: ItemTaskBinding) : ViewHolder(binding.root) {
+    inner class TaskViewHolder(private val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
+
+
         fun bind(task: Task) = with(binding) {
             if (adapterPosition % 2 == 0) {
                 itemView.setBackgroundColor(Color.BLACK)
                 tvTitle.setTextColor(Color.WHITE)
                 tvDesc.setTextColor(Color.WHITE)
-            } else {
-                itemView.setBackgroundColor(Color.WHITE)
-                tvTitle.setTextColor(Color.BLACK)
-                tvDesc.setTextColor(Color.BLACK)
             }
             tvTitle.text = task.title
             tvDesc.text = task.desc
             itemView.setOnLongClickListener {
                 onLongClick(task)
                 false
+            }
+            binding.root.setOnClickListener {
+                onClick(task)
             }
         }
     }
