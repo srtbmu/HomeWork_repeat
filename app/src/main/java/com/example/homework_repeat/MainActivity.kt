@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.navigation_notifications,
                 R.id.taskFragment,
                 R.id.navigation_profile,
-                R.id.chooseRegisterFragment
+//                R.id.chooseRegisterFragment
             )
         )
 

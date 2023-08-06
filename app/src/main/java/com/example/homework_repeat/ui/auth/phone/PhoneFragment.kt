@@ -1,11 +1,13 @@
 package com.example.homework_repeat.ui.auth.phone
 
 import android.os.Bundle
+import android.text.InputFilter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.homework_repeat.R
@@ -31,8 +33,31 @@ class PhoneFragment : Fragment() {
     private lateinit var auth: FirebaseAuth
     private var phoneNumber = ""
 
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        auth = FirebaseAuth.getInstance()
+        clickPhoneNumber()
+        val filterArray = arrayOf<InputFilter>(InputFilter.LengthFilter(13))
+        binding.etPhone.filters = filterArray
+
+    }
+
+    private fun clickPhoneNumber() {
+        binding.btnSend.setOnClickListener {
+            if (binding.etPhone.toString().isNotEmpty()) {
+                verifyNumber()
+            } else {
+                binding.etPhone.error = "Phone number"
+                Toast.makeText(context, "null phone number", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
     private val callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+
         override fun onVerificationCompleted(credential: PhoneAuthCredential) {}
+
         override fun onVerificationFailed(e: FirebaseException) {}
 
         override fun onCodeSent(
@@ -43,19 +68,6 @@ class PhoneFragment : Fragment() {
                 R.id.verifyFragment,
                 bundleOf(VERIFY_KEY to verificationId)
             )
-        }
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        auth = FirebaseAuth.getInstance()
-        binding.btnSend.setOnClickListener {
-            if(binding.etPhone.toString().isNotEmpty()) {
-                verifyNumber()
-            }else{
-                binding.etPhone.error = "Phone number"
-                Toast.makeText(context, "null phone number", Toast.LENGTH_SHORT).show()
-            }
         }
     }
 
