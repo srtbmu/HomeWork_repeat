@@ -17,7 +17,7 @@ import com.example.homework_repeat.ui.task.adapter.TaskAdapter
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    private var adapter = TaskAdapter(this::onLongClick,this::onClick)
+    private var adapter = TaskAdapter(this::onLongClick, this::onClick)
     private val binding get() = _binding!!
 
     override fun onCreateView(

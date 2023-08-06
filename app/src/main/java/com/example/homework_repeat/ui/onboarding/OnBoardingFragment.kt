@@ -15,6 +15,7 @@ class OnBoardingFragment : Fragment() {
 
     private lateinit var binding: FragmentOnBoardingBinding
     private val adapter = OnBoardingAdapter(this::onClick)
+
     private val pref: Pref by lazy {
         Pref(requireContext())
     }

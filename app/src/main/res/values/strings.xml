@@ -15,4 +15,11 @@
     <string name="profile_hint">Name</string>
     <string name="todo">TODO</string>
     <string name="update">UPDATE</string>
+    <string name="number_phone">Number phone:</string>
+    <string name="send">send</string>
+    <string name="number">number</string>
+    <string name="google">google</string>
+    <string name="registration">Registration Acount</string>
+    <string name="code">number code:</string>
+    <string name="exit_acount_google">Exit acount google</string>
 </resources>

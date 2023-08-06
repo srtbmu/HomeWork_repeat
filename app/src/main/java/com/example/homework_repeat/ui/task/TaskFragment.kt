@@ -13,6 +13,7 @@ import com.example.homework_repeat.databinding.FragmentTaskBinding
 import com.example.homework_repeat.model.Task
 import com.example.homework_repeat.ui.home.HomeFragment.Companion.TASK_KEY
 
+@Suppress("DEPRECATION")
 class TaskFragment : Fragment() {
 
     private lateinit var binding: FragmentTaskBinding

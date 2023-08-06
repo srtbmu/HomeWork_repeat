@@ -37,4 +37,19 @@
         android:name="com.example.homework_repeat.ui.onboarding.OnBoardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" />
+    <fragment
+        android:id="@+id/phoneFragment"
+        android:name="com.example.homework_repeat.ui.auth.phone.PhoneFragment"
+        android:label="fragment_phone"
+        tools:layout="@layout/fragment_phone" />
+    <fragment
+        android:id="@+id/verifyFragment"
+        android:name="com.example.homework_repeat.ui.auth.verify.VerifyFragment"
+        android:label="fragment_verify"
+        tools:layout="@layout/fragment_verify" />
+    <fragment
+        android:id="@+id/chooseRegisterFragment"
+        android:name="com.example.homework_repeat.ui.auth.registration.ChooseRegisterFragment"
+        android:label="fragment_choose_register"
+        tools:layout="@layout/fragment_choose_register" />
 </navigation>

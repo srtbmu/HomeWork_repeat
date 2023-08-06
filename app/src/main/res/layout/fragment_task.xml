@@ -7,57 +7,6 @@
     android:orientation="vertical"
     tools:context=".ui.task.TaskFragment">
 
-    <!--    <RelativeLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="60dp"-->
-    <!--        android:layout_marginLeft="28dp"-->
-    <!--        android:layout_marginRight="28dp">-->
-
-    <!--        <EditText-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="45dp"-->
-    <!--            android:layout_marginTop="15dp"-->
-    <!--            android:background="@drawable/boarder"-->
-    <!--            android:paddingLeft="5dp" />-->
-
-    <!--        <TextView-->
-    <!--            android:id="@+id/et_title"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginLeft="10dp"-->
-    <!--            android:layout_marginTop="4dp"-->
-    <!--            android:background="#ffffff"-->
-    <!--            android:text="header"-->
-    <!--            android:textColor="#03A6F0"-->
-    <!--            android:textSize="18sp" />-->
-    <!--    </RelativeLayout>-->
-
-    <!--    <RelativeLayout-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="60dp"-->
-    <!--        android:layout_marginLeft="28dp"-->
-    <!--        android:layout_marginRight="28dp">-->
-
-    <!--        <EditText-->
-    <!--            android:id="@+id/et_description"-->
-    <!--            android:layout_width="match_parent"-->
-    <!--            android:layout_height="45dp"-->
-    <!--            android:layout_marginTop="15dp"-->
-    <!--            android:background="@drawable/boarder"-->
-    <!--            android:paddingLeft="5dp" />-->
-
-    <!--        <TextView-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_marginLeft="10dp"-->
-    <!--            android:layout_marginTop="4dp"-->
-    <!--            android:background="#ffffff"-->
-    <!--            android:text="text"-->
-    <!--            android:textColor="#03A6F0"-->
-    <!--            android:textSize="18sp" />-->
-    <!--    </RelativeLayout>-->
-
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/input_title"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
