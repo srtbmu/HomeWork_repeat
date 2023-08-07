@@ -12,6 +12,8 @@ import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.homework_repeat.R
 import com.example.homework_repeat.data.local.Pref
 import com.example.homework_repeat.databinding.FragmentProfileBinding
 import com.example.homework_repeat.utils.loadImage
@@ -68,6 +70,7 @@ class ProfileFragment : Fragment() {
                 .setTitle("Delete acount google")
                 .setPositiveButton("Yes") { _, _ ->
                     auth.signOut()
+                    findNavController().navigate(R.id.chooseRegisterFragment)
                     Toast.makeText(
                         context,
                         "You are signed out of your Google account",

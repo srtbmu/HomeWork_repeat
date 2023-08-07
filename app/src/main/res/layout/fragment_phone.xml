@@ -23,7 +23,7 @@
             android:layout_marginTop="128dp"
             android:hint="@string/number_phone"
             android:inputType="phone"
-            android:maxLines="13" />
+            android:maxLength="13" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

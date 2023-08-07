@@ -39,12 +39,19 @@ class PhoneFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         auth = FirebaseAuth.getInstance()
         clickPhoneNumber()
+        numberRegion()
+    }
+
+    private fun numberRegion() {
         binding.etPhone.setText(countryCode)
+
         val textWatcher = object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
             override fun afterTextChanged(p0: Editable?) {
+
                 val phoneNumber = p0.toString()
+
                 if (!phoneNumber.startsWith(
                         countryCode
                     )
