@@ -1,13 +1,13 @@
 package com.example.homework_repeat.ui.auth.phone
 
 import android.os.Bundle
-import android.text.InputFilter
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.os.bundleOf
-import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.homework_repeat.R
@@ -32,15 +32,32 @@ class PhoneFragment : Fragment() {
     private lateinit var binding: FragmentPhoneBinding
     private lateinit var auth: FirebaseAuth
     private var phoneNumber = ""
+    private var countryCode = "+996"
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = FirebaseAuth.getInstance()
         clickPhoneNumber()
-        val filterArray = arrayOf<InputFilter>(InputFilter.LengthFilter(13))
-        binding.etPhone.filters = filterArray
-
+        binding.etPhone.setText(countryCode)
+        val textWatcher = object : TextWatcher {
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+            override fun afterTextChanged(p0: Editable?) {
+                val phoneNumber = p0.toString()
+                if (!phoneNumber.startsWith(
+                        countryCode
+                    )
+                ) {
+                    binding.etPhone.removeTextChangedListener(this)
+                    val updateNumber = countryCode
+                    binding.etPhone.setText(updateNumber)
+                    binding.etPhone.setSelection(updateNumber.length)
+                    binding.etPhone.addTextChangedListener(this)
+                }
+            }
+        }
+        binding.etPhone.addTextChangedListener(textWatcher)
     }
 
     private fun clickPhoneNumber() {

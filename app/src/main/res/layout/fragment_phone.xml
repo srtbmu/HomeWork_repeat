@@ -10,7 +10,7 @@
         android:id="@+id/text_input"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
-        android:layout_height="54dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,10 +20,10 @@
             android:id="@+id/et_phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:maxLines="13"
             android:layout_marginTop="128dp"
             android:hint="@string/number_phone"
-            android:inputType="phone" />
+            android:inputType="phone"
+            android:maxLines="13" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
