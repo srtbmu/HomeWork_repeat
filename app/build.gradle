@@ -43,6 +43,8 @@ dependencies {
 
     implementation 'com.google.firebase:firebase-auth-ktx:22.1.1'
     implementation 'com.google.android.gms:play-services-auth:20.6.0'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.7.0'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.2.1'
     def room_version = "2.5.2"
 
     implementation 'com.google.android.material:material:1.9.0'

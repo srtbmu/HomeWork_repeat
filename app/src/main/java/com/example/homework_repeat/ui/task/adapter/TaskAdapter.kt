@@ -41,7 +41,8 @@ class TaskAdapter(
         return list.size
     }
 
-    inner class TaskViewHolder(private val binding: ItemTaskBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class TaskViewHolder(private val binding: ItemTaskBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
 
         fun bind(task: Task) = with(binding) {

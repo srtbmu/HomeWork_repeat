@@ -32,7 +32,6 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
         android:textColorHint="@color/black"
-        app:helperText="@string/profile_hint"
         app:layout_constraintTop_toBottomOf="@id/cardView">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -43,12 +42,23 @@
             android:hint="@string/profile_hint" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
+    <!--    <androidx.appcompat.widget.AppCompatButton-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="24dp"-->
+    <!--        android:text="@string/exit_acount_google"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/text_input"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/text_input" />-->
+
+    <ImageView
         android:id="@+id/btn_exit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="46dp"
+        android:layout_height="46dp"
         android:layout_marginTop="24dp"
-        android:text="@string/exit_acount_google"
-        app:layout_constraintEnd_toEndOf="@id/text_input"
-        app:layout_constraintTop_toBottomOf="@id/text_input" />
+        android:layout_marginEnd="24dp"
+        android:src="@drawable/ic_exit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/todo" />
+    
 </androidx.constraintlayout.widget.ConstraintLayout>

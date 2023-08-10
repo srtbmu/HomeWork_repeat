@@ -23,4 +23,9 @@
     <string name="code">number code:</string>
     <string name="exit_acount_google">Exit acount google</string>
     <string name="_996">+996</string>
+    <string name="car_one">Car one</string>
+    <string name="car_two">Car two</string>
+    <string name="text">text</string>
+    <string name="marka">Marka:</string>
+    <string name="model">Model:</string>
 </resources>

@@ -2,7 +2,6 @@ package com.example.homework_repeat.ui.auth.registration
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,7 +26,6 @@ class ChooseRegisterFragment : Fragment() {
     private lateinit var binding: FragmentChooseRegisterBinding
     private lateinit var launcher: ActivityResultLauncher<Intent>
     private lateinit var auth: FirebaseAuth
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -56,7 +54,7 @@ class ChooseRegisterFragment : Fragment() {
                     firebaseAuthWithGoogle(account.idToken!!)
                 }
             } catch (e: ApiException) {
-                Log.e("MyLog", "Google SigIn done")
+                Toast.makeText(context, "ERROR GOOGLE SERVER", Toast.LENGTH_SHORT).show()
             }
         }
     }
