@@ -16,6 +16,5 @@ class App : Application() {
 
     companion object {
         lateinit var db: AppDatabase
-
     }
 }
